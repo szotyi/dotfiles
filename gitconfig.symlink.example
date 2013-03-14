@@ -1,0 +1,10 @@
+[user]
+	name = AUTHORNAME
+	email = AUTHOREMAIL
+[core]
+	editor = vim
+[color]
+	diff = true
+	status = true
+	branch = true
+	ui = true

@@ -1,0 +1,207 @@
+# .bashrc
+
+LOGNAME=$(id -un)
+UNAME=$(uname)
+# complete hostnames from this file
+HOSTFILE=~/.ssh/known_hosts
+# readline config
+INPUTRC=~/.inputrc
+
+# ----------------------------------------------------------------------
+#  SHELL OPTIONS
+# ----------------------------------------------------------------------
+
+# bring in system bashrc
+test -r /etc/bashrc &&
+      . /etc/bashrc
+
+# notify of bg job completion immediately
+set -o notify
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# fix directory names when changing current directory
+shopt -s cdspell
+
+# ----------------------------------------------------------------------
+# ENVIRONMENT CONFIGURATION
+# ----------------------------------------------------------------------
+
+# detect interactive shell
+case "$-" in
+    *i*) INTERACTIVE=yes ;;
+    *)   unset INTERACTIVE ;;
+esac
+
+# detect login shell
+case "$0" in
+    -*) LOGIN=yes ;;
+    *)  unset LOGIN ;;
+esac
+
+BASH_ENV=$HOME/.bashrc
+CVS_RSH=ssh
+EDITOR=vim
+SVN_EDITOR="vim --noplugin"
+LC_CTYPE=hu_HU.UTF-8
+
+export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LC_CTYPE
+
+# Tell ls to be colourful
+export CLICOLOR=1
+
+# Tell grep to highlight matches
+export GREP_OPTIONS='--color=auto'
+
+# ----------------------------------------------------------------------
+# PATH
+# ----------------------------------------------------------------------
+
+# we want the various sbins on the path along with /usr/local/bin
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="/usr/local/bin:$PATH"
+
+# put ~/bin on PATH if you have it
+test -d "$HOME/bin" &&
+PATH="$HOME/bin:$PATH"
+
+# check for android sdk
+test -d "$HOME/Development/libraries/android/current-sdk/tools" &&
+PATH="$PATH:$HOME/Development/libraries/android/current-sdk/tools"
+
+export PATH
+
+# ----------------------------------------------------------------------
+# PAGER / EDITOR
+# ----------------------------------------------------------------------
+
+# See what we have to work with ...
+HAVE_VIM=$(command -v vim)
+
+# EDITOR
+test -n "$HAVE_VIM" &&
+EDITOR=vim ||
+EDITOR=vi
+export EDITOR
+
+# PAGER
+if test -n "$(command -v less)" ; then
+    PAGER="less -FirSwX"
+    MANPAGER="less -FiRswX"
+else
+    PAGER=more
+    MANPAGER="$PAGER"
+fi
+export PAGER MANPAGER
+
+# ----------------------------------------------------------------------
+# PROMPT
+# ----------------------------------------------------------------------
+GIT_PS1_SHOWCOLORHINTS="1"
+GIT_PS1_SHOWUNTRACKEDFILES="1"
+GIT_PS1_SHOWDIRTYSTATE="1"
+GIT_PS1_SHOWSTASHSTATE="1"
+GIT_PS1_SHOWUPSTREAM="auto"
+source ~/.git-prompt
+
+RED="\[\033[0;31m\]"
+BROWN="\[\033[0;33m\]"
+GREY="\[\033[0;97m\]"
+BLUE="\[\033[0;34m\]"
+PS_CLEAR="\[\033[0m\]"
+SCREEN_ESC="\[\033k\033\134\]"
+GREEN="\[\033[0;32m\]"
+PURPLE="\[\033[1;35m\]"
+WHITE="\[\033[1;37m\]"
+
+if [ "$LOGNAME" = "root" ]; then
+    COLOR1="${RED}"
+    COLOR2="${BROWN}"
+    P="#"
+elif hostname | grep -q 'github\.com'; then
+    GITHUB=yep
+    COLOR1="\[\e[0;94m\]"
+    COLOR2="\[\e[0;92m\]"
+    P="\$"
+else
+    COLOR1="${BLUE}"
+    COLOR2="${BROWN}"
+    P="\$"
+fi
+
+prompt_simple() {
+    unset PROMPT_COMMAND
+    PS1="[\u@\h:\w]\$ "
+    PS2="> "
+}
+
+prompt_compact() {
+    unset PROMPT_COMMAND
+    PS1="${COLOR1}${P}${PS_CLEAR} "
+    PS2="> "
+}
+
+prompt_color() {
+  PS1="${GREY}[${COLOR1}\u${GREY}@${COLOR2}\h${GREY}:${COLOR1}\W${GREEN}"'$(__git_ps1 " (%s)")'"${GREY}]${COLOR2}$P${PS_CLEAR} "
+  #PS2="\[[33;1m\]continue \[[0m[1m\]> "
+}
+
+# Use the color prompt by default when interactive
+test -n "$PS1" &&
+prompt_color
+
+# we always pass these to ls(1)
+LS_COMMON="-hBG"
+
+# if the dircolors utility is available, set that up to
+dircolors="$(type -P gdircolors dircolors | head -1)"
+test -n "$dircolors" && {
+    COLORS=/etc/DIR_COLORS
+    test -e "/etc/DIR_COLORS.$TERM"   && COLORS="/etc/DIR_COLORS.$TERM"
+    test -e "$HOME/.dircolors"        && COLORS="$HOME/.dircolors"
+    test ! -e "$COLORS"               && COLORS=
+    eval `$dircolors --sh $COLORS`
+}
+unset dircolors
+
+# setup the main ls alias if we've established common args
+test -n "$LS_COMMON" &&
+alias ls="command ls $LS_COMMON"
+
+# easily go up lots of directories
+function up {
+[ "${1/[^0-9]/}" == "$1" ] && {
+    local ups=""
+    for i in $(seq 1 $1); do
+        ups=$ups"../"
+    done
+    cd $ups
+    } || echo "usage: up INTEGER"
+}
+
+# -------------------------------------------------------------------
+# MOTD / FORTUNE
+# -------------------------------------------------------------------
+
+test -n "$INTERACTIVE" -a -n "$LOGIN" && {
+    uname -npsr
+    uptime
+}
+
+
+# alias definitions
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+# bash completion
+# http://www.caliban.org/bash/index.shtml#completion
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+if [ -f ~/.bash_completion ]; then
+  . ~/.bash_completion
+fi
