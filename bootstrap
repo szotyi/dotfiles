@@ -116,14 +116,14 @@ install_dotfiles () {
   done
 }
 
-update () {
+update_git () {
   git pull origin master
   git submodule init
   git submodule update
 }
 
 setup_gitconfig
-#update
+update_git
 install_dotfiles
 
 if [ "$(uname -s)" == "Darwin" ]
