@@ -22,8 +22,7 @@ To install these dotfiles without git first create the directory for them `mkdir
   
 ```bash
 cd ~/.dotfiles
-curl -#L https://github.com/szotyi/dotfiles/tarball/master | tar -xzv --strip-components 
-1 --exclude={README.md}
+curl -#L https://github.com/szotyi/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md}
 ./bootstrap -ng
 ```
 
