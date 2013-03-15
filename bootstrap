@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 # bootstrap installs things
-# it is a modified version of https://github.com/holman/dotfiles/blob/master/script/bootstrap
+# it is a modified version of 
+# https://github.com/holman/dotfiles/blob/master/script/bootstrap
 
 DOTFILES_ROOT="`pwd`"
 
@@ -42,7 +43,6 @@ setup_gitconfig () {
     success 'gitconfig'
   fi
 }
-
 
 link_files () {
   ln -s $1 $2
@@ -123,13 +123,17 @@ update_git () {
 }
 
 setup_gitconfig
-update_git
+# -ng: no git install
+if [ "$1" != "-ng" ]
+then
+  update_git
+fi
 install_dotfiles
 
 if [ "$(uname -s)" == "Darwin" ]
 then
-  info "installing dependencies"
-  # osx
+  info "setting up OS X defaults"
+  # ./osx
 fi
 
 echo ''

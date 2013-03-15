@@ -138,6 +138,15 @@ chflags nohidden ~/Library
 # Set the icon size of Dock items to 31 pixels
 defaults write com.apple.dock tilesize -int 31
 
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
+# Always show the Dock
+defaults write com.apple.dock autohide -bool false
+
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
@@ -238,7 +247,7 @@ defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-        "Mail" "Safari" "SizeUp" "SystemUIServer" "Terminal" "Transmission" \
+        "Mail" "Safari" "SystemUIServer" "Terminal" "Transmission" \
         "Twitter" "iCal" "iTunes"; do
         killall "$app" > /dev/null 2>&1
 done
