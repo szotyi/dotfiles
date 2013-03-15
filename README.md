@@ -37,7 +37,7 @@ cd .dotfiles
 ./osx
 ```
 
-For more defaults look at Mathias Bynen's legendary [defaults script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx).
+For more defaults look at Mathias Bynens' legendary [defaults script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx).
 
 ## Feedback
 
