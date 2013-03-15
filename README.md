@@ -2,7 +2,7 @@
 
 ## Idea
 
-Mostly from [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), but there are lots of others. You can find more info on [dotfiles.github.com](https://dotfiles.github.com) and [dotfiles.org](http://dotfiles.org).
+Mostly from [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), but there are lots of others. You can find more info on [dotfiles.github.com](http://dotfiles.github.com) and [dotfiles.org](http://dotfiles.org).
 
 ## Installation
 
@@ -36,6 +36,8 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 cd .dotfiles
 ./osx
 ```
+
+For more defaults look at Mathias Bynen's legendary [defaults script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx)
 
 ## Feedback
 
