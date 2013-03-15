@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dotfiles by szotyi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Dotfiles</h1>
+        <p class="header"></p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/szotyi/dotfiles/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/szotyi/dotfiles/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/szotyi/dotfiles">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/szotyi">szotyi</a></p>
+
+
+      </header>
+      <section>
+        <h1>szotyi dotfiles</h1>
+
+<h2>Idea</h2>
+
+<p>Mostly from <a href="https://github.com/holman/dotfiles">Zach Holman</a> and <a href="https://github.com/mathiasbynens/dotfiles">Mathias Bynens</a>, but there are lots of others. You can find more info on <a href="http://dotfiles.github.com">dotfiles.github.com</a> and <a href="http://dotfiles.org">dotfiles.org</a>.</p>
+
+<h2>Installation</h2>
+
+<h3>Using Git and the bootstrap script</h3>
+
+<p>You can clone the repository wherever you want, like <code>~/.dotfiles</code> and than run the bootstrap script in the the directory.</p>
+
+<div class="highlight"><pre>git clone https://github.com/szotyi/dotfiles.git .dotfiles <span class="o">&amp;&amp;</span> <span class="nb">cd</span> .dotfiles <span class="o">&amp;&amp;</span> ./bootstrap
+</pre></div>
+
+<p>To update, <code>cd</code> into your local <code>.dotfiles</code> repository and run <code>./bootstrap</code> again.</p>
+
+<h3>Git-free install</h3>
+
+<p>To install these dotfiles without git first create the directory for them <code>mkdir ~/.dotfiles</code> and than run this:</p>
+
+<div class="highlight"><pre><span class="nb">cd</span> ~/.dotfiles
+curl -#L https://github.com/szotyi/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude<span class="o">={</span>README.md<span class="o">}</span>
+./bootstrap -ng
+</pre></div>
+
+<p>To update later on, just run these commands again.</p>
+
+<h3>OS X defaults</h3>
+
+<p>When setting up a new Mac, you may want to set some sensible OS X defaults:</p>
+
+<div class="highlight"><pre><span class="nb">cd</span> .dotfiles
+./osx
+</pre></div>
+
+<p>For more defaults look at Mathias Bynens' legendary <a href="https://github.com/mathiasbynens/dotfiles/blob/master/.osx">defaults script</a>.</p>
+
+<h2>Feedback</h2>
+
+<p>Suggestions/improvements <a href="https://github.com/szotyi/dotfiles/issues">welcome</a>!</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-5166986-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
