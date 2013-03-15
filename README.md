@@ -2,7 +2,7 @@
 
 ## Idea
 
-Mostly is from [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), but there are lots of others. You can find more info on [dotfiles.github.com](https://dotfiles.github.com) and [dotfiles.org](http://dotfiles.org).
+Mostly from [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), but there are lots of others. You can find more info on [dotfiles.github.com](https://dotfiles.github.com) and [dotfiles.org](http://dotfiles.org).
 
 ## Installation
 
