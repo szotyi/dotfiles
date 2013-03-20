@@ -14,3 +14,4 @@ alias timestamp='date "+%Y%m%d%H%M%S"'
 
 alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 alias pubkey="more ~/.ssh/id_dsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias json="python -mjson.tool"
