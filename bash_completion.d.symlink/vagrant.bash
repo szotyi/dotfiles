@@ -3,7 +3,7 @@ _vagrant()
 {
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    commands="box destroy halt help init package provision reload resume ssh ssh_config status suspend up version"
+    commands="box destroy halt help init package provision reload resume ssh ssh-config status suspend up version"
 
     if [ $COMP_CWORD == 1 ]
     then
