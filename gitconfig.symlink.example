@@ -8,3 +8,6 @@
 	status = true
 	branch = true
 	ui = true
+[alias]
+	st = status -sb
+	purr = pull --rebase
