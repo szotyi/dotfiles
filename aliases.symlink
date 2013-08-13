@@ -6,15 +6,22 @@ alias df="df -h"
 
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 
-# disk usage with human sizes and minimal depth
-alias du1='du -h --max-depth=1'
 alias fn='find . -name'
 alias hi='history | tail -20'
-alias timestamp='date "+%Y%m%d%H%M%S"'
+if [ "$(uname -s)" == "Darwin" ]
+then
+  alias timestamp="date -r"
+else
+  alias timestamp="date -d @"
+fi
+alias datetime='date "+%Y%m%d%H%M%S"'
 
-alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 alias pubkey="more ~/.ssh/id_dsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias json="python -mjson.tool"
 
-# fix OS X "Open With"
-alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+if [ "$(uname -s)" == "Darwin" ]
+then
+  alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
+  # fix OS X "Open With"
+  alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+fi

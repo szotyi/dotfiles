@@ -46,6 +46,10 @@ CVS_RSH=ssh
 EDITOR=vim
 SVN_EDITOR="vim --noplugin"
 LC_CTYPE=hu_HU.UTF-8
+if [ "$(uname -s)" == "Darwin" ]
+then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LC_CTYPE
 
@@ -70,10 +74,16 @@ PATH="$HOME/bin:$PATH"
 # check for android sdk
 test -d "$HOME/Development/libraries/android/current-sdk/tools" &&
 PATH="$PATH:$HOME/Development/libraries/android/current-sdk/tools"
+test -d "$HOME/Development/libraries/android/current-sdk/platform-tools" &&
+PATH="$PATH:$HOME/Development/libraries/android/current-sdk/platform-tools"
 
 # check for scala sbt
-test -d "$HOME/Development/libraries/scala/sbt/bin" &&
-PATH="$PATH:$HOME/Development/libraries/scala/sbt/bin"
+test -d "$HOME/Development/libraries/scala/current-sbt/bin" &&
+PATH="$PATH:$HOME/Development/libraries/scala/current-sbt/bin"
+
+# check for scala play framework
+test -d "$HOME/Development/libraries/scala/current-play" &&
+  PATH="$PATH:$HOME/Development/libraries/scala/current-play"
 
 export PATH
 
