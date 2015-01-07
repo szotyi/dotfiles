@@ -4,6 +4,8 @@ alias la="ls -a"
 alias ll="ls -lh"
 alias df="df -h"
 
+alias fuck='sudo $(history -p \!\!)'
+
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 
 alias fn='find . -name'
@@ -21,7 +23,12 @@ alias json="python -mjson.tool"
 
 if [ "$(uname -s)" == "Darwin" ]
 then
+  alias trash_lsof="sudo lsof +c 0 | grep '\.Trash'"
   alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
   # fix OS X "Open With"
   alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+  pman () {
+    man -t "${1}" | open -f -a /Applications/Preview.app
+  }
+
 fi
