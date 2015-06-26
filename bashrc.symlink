@@ -48,7 +48,11 @@ SVN_EDITOR="vim --noplugin"
 LC_CTYPE=hu_HU.UTF-8
 if [ "$(uname -s)" == "Darwin" ]
 then
-  export JAVA_HOME=$(/usr/libexec/java_home)
+  #export JAVA_HOME=$(/usr/libexec/java_home)
+  use-java () {
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1)
+  }
+  use-java 7
 fi
 
 export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LC_CTYPE
@@ -81,9 +85,9 @@ PATH="$PATH:$HOME/Development/libraries/android/current-sdk/platform-tools"
 test -d "$HOME/Development/libraries/scala/current-sbt/bin" &&
 PATH="$PATH:$HOME/Development/libraries/scala/current-sbt/bin"
 
-# check for scala play framework
-test -d "$HOME/Development/libraries/scala/current-play" &&
-  PATH="$PATH:$HOME/Development/libraries/scala/current-play"
+# check for activator framework
+test -d "$HOME/Development/libraries/scala/current-activator" &&
+  PATH="$PATH:$HOME/Development/libraries/scala/current-activator"
 
 # check for xctool
 test -d "$HOME/bin/xctool" &&
@@ -123,6 +127,8 @@ export EDITOR
 if test -n "$(command -v less)" ; then
     PAGER="less -FirSwX"
     MANPAGER="less -FiRswX"
+    export LESS='-R'
+    export LESSOPEN='|~/.lessfilter %s'
 else
     PAGER=more
     MANPAGER="$PAGER"
