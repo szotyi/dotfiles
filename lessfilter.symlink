@@ -8,7 +8,7 @@ case "$1" in
     *.lsp|*.l|*.pas|*.p|*.xml|*.xps|*.xsl|*.axp|*.ppd|*.pov|\
     *.diff|*.patch|*.py|*.rb|*.sql|*.ebuild|*.eclass|*.scala)
         pygmentize -f 256 -O style=solarized256 "$1";;
-    .bashrc|.bash_aliases|.bash_environment)
+    *.bashrc|*.bash_aliases|*.bash_environment)
         pygmentize -f 256 -O style=solarized256 -l sh "$1"
         ;;
     *)
