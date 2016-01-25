@@ -208,7 +208,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
-# Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
+# Address Book, Dashboard, iCal, TextEdit, Photos and Disk Utility                   #
 ###############################################################################
 
 # Enable the debug menu in Address Book
@@ -223,6 +223,9 @@ defaults write com.apple.iCal IncludeDebugMenu -bool true
 # Enable the debug menu in Disk Utility
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
+
+# Prevent Photos from opening automatically, when pluging in a device
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 # Mac App Store                                                               #
