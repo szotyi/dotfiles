@@ -254,6 +254,13 @@ defaults write org.m0k.transmission WarningLegal -bool false
 defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
 
 ###############################################################################
+# Tweetbot.app                                                                 #
+###############################################################################
+
+# Workaround for t.co links
+defaults write com.tapbots.TweetbotMac OpenURLsDirectly YES
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
