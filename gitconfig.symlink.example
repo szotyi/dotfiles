@@ -11,3 +11,7 @@
 [alias]
 	st = status -sb
 	purr = pull --rebase
+[push]
+        default = simple
+[diff "plist"]
+        textconv = plutil -convert xml1 -o -
