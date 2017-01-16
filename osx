@@ -191,6 +191,13 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 ###############################################################################
+# XCode                                                                    #
+###############################################################################
+
+# Show build time 
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+
+###############################################################################
 # Terminal                                                                    #
 ###############################################################################
 

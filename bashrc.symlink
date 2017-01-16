@@ -52,7 +52,7 @@ then
   use-java () {
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.$1)
   }
-  use-java 7
+  use-java 8
 fi
 
 export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LC_CTYPE
@@ -62,6 +62,16 @@ export CLICOLOR=1
 
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
+
+# ----------------------------------------------------------------------
+# HISTORY 
+# ----------------------------------------------------------------------
+
+# don't record duplicates
+export HISTCONTROL=ignoreboth:erasedups
+
+# backward search with ctrl-s
+stty -ixon
 
 # ----------------------------------------------------------------------
 # PATH
