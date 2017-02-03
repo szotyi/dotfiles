@@ -1,3 +1,6 @@
 [submodule "vim.symlink/bundle/vim-colors-solarized"]
 	path = vim.symlink/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim.symlink/bundle/vim-swift"]
+	path = vim.symlink/bundle/vim-swift
+	url = https://github.com/kballard/vim-swift
