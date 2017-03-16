@@ -4,6 +4,3 @@
 [submodule "vim.symlink/bundle/swift.vim"]
 	path = vim.symlink/bundle/swift.vim
 	url = https://github.com/keith/swift.vim
-[submodule "vim.symlink/bundle/syntastic"]
-	path = vim.symlink/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
