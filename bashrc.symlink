@@ -98,25 +98,6 @@ PATH="$PATH:$HOME/Development/libraries/scala/current-sbt/bin"
 test -d "$HOME/Development/libraries/scala/current-activator" &&
   PATH="$PATH:$HOME/Development/libraries/scala/current-activator"
 
-# check for xctool
-test -d "$HOME/bin/xctool" &&
-  PATH="$PATH:$HOME/bin/xctool"
-
-# check for oclint
-test -d "$HOME/bin/oclint" &&
-  OCLINT_HOME="$HOME/bin/oclint"
-export OCLINT_HOME
-
-test -d "$OCLINT_HOME/bin" &&
-  PATH="$PATH:$OCLINT_HOME/bin"
-
-# check for golang workspace
-test -d "$HOME/Development/projects/go" &&
-  GOPATH="$HOME/Development/projects/go"
-
-test -d "$GOPATH/bin" &&
-  PATH="$PATH:$GOPATH/bin"
-
 export PATH
 
 # pwdf: echoes path of front-most window of Finder
@@ -272,6 +253,3 @@ fi
 if [ -f ~/.bash_completion ]; then
   . ~/.bash_completion
 fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
