@@ -84,20 +84,6 @@ PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
-# check for android sdk
-test -d "$HOME/Development/libraries/android/current-sdk/tools" &&
-PATH="$PATH:$HOME/Development/libraries/android/current-sdk/tools"
-test -d "$HOME/Development/libraries/android/current-sdk/platform-tools" &&
-PATH="$PATH:$HOME/Development/libraries/android/current-sdk/platform-tools"
-
-# check for scala sbt
-test -d "$HOME/Development/libraries/scala/current-sbt/bin" &&
-PATH="$PATH:$HOME/Development/libraries/scala/current-sbt/bin"
-
-# check for activator framework
-test -d "$HOME/Development/libraries/scala/current-activator" &&
-  PATH="$PATH:$HOME/Development/libraries/scala/current-activator"
-
 export PATH
 
 # pwdf: echoes path of front-most window of Finder
