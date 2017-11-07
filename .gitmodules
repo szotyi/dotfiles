@@ -4,3 +4,12 @@
 [submodule "vim.symlink/bundle/swift.vim"]
 	path = vim.symlink/bundle/swift.vim
 	url = https://github.com/keith/swift.vim
+[submodule "/Users/szotyi/.dotfiles/vim.symlink/bundle/vim-airline"]
+	path = /Users/szotyi/.dotfiles/vim.symlink/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "/Users/szotyi/.dotfiles/vim.symlink/bundle/vim-fugitive"]
+	path = /Users/szotyi/.dotfiles/vim.symlink/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "/Users/szotyi/.dotfiles/vim.symlink/bundle/vim-unimpaired"]
+	path = /Users/szotyi/.dotfiles/vim.symlink/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
