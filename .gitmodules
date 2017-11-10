@@ -1,15 +1,15 @@
-[submodule "vim.symlink/bundle/vim-colors-solarized"]
-	path = vim.symlink/bundle/vim-colors-solarized
+[submodule "vim.symlink/pack/szotyi/start/vim-colors-solarized"]
+	path = vim.symlink/pack/szotyi/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule "vim.symlink/bundle/swift.vim"]
-	path = vim.symlink/bundle/swift.vim
+[submodule "vim.symlink/pack/szotyi/start/swift.vim"]
+	path = vim.symlink/pack/szotyi/start/swift.vim
 	url = https://github.com/keith/swift.vim
-[submodule "/Users/szotyi/.dotfiles/vim.symlink/bundle/vim-airline"]
-	path = /Users/szotyi/.dotfiles/vim.symlink/bundle/vim-airline
+[submodule "vim.symlink/pack/szotyi/start/vim-airline"]
+	path = vim.symlink/pack/szotyi/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "/Users/szotyi/.dotfiles/vim.symlink/bundle/vim-fugitive"]
-	path = /Users/szotyi/.dotfiles/vim.symlink/bundle/vim-fugitive
+[submodule "vim.symlink/pack/szotyi/start/vim-fugitive"]
+	path = vim.symlink/pack/szotyi/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "/Users/szotyi/.dotfiles/vim.symlink/bundle/vim-unimpaired"]
-	path = /Users/szotyi/.dotfiles/vim.symlink/bundle/vim-unimpaired
+[submodule "vim.symlink/pack/szotyi/start/vim-unimpaired"]
+	path = vim.symlink/pack/szotyi/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git

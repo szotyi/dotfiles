@@ -61,7 +61,6 @@ endif " has("autocmd")
 "set mouse=a
 
 filetype plugin indent on
-call pathogen#infect()
 
 syntax enable
 
