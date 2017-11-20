@@ -68,6 +68,13 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" nerdtree
+let g:nerdtree_tabs_open_on_console_startup = 0
+
+" ctrlp
+let g:ctrlp_regexp_search = 1
+" let g:ctrlp_clear_cache_on_exit = 0
+
 if !has("gui_running")
 else
 " colors

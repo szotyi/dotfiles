@@ -13,3 +13,9 @@
 [submodule "vim.symlink/pack/szotyi/start/vim-unimpaired"]
 	path = vim.symlink/pack/szotyi/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim.symlink/pack/szotyi/start/nerdtree"]
+	path = vim.symlink/pack/szotyi/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim.symlink/pack/szotyi/start/ctrlp.vim"]
+	path = vim.symlink/pack/szotyi/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
