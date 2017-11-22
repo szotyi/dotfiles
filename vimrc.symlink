@@ -70,6 +70,7 @@ colorscheme solarized
 
 " nerdtree
 let g:nerdtree_tabs_open_on_console_startup = 0
+command NT NERDTree
 
 " ctrlp
 let g:ctrlp_regexp_search = 1
