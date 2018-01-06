@@ -61,7 +61,8 @@ export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LC_CTYPE
 export CLICOLOR=1
 
 # Tell grep to highlight matches
-export GREP_OPTIONS='--color=auto'
+# moved to aliases
+# export GREP_OPTIONS='--color=auto'
 
 # ----------------------------------------------------------------------
 # HISTORY 
