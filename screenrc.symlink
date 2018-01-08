@@ -1,5 +1,5 @@
 startup_message off
 hardstatus on
 hardstatus alwayslastline
-hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
-#
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..W} %H %{..W} %m/%d %C%a "
+defscrollback 10000

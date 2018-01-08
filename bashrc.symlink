@@ -85,6 +85,11 @@ PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
+# Haskell for Mac
+if [ -d /usr/local/lib/HaskellCLI-8.0.2-8.9-3/bin ]; then
+  PATH="$PATH:/usr/local/lib/HaskellCLI-8.0.2-8.9-3/bin"
+fi
+
 export PATH
 
 # pwdf: echoes path of front-most window of Finder
@@ -239,4 +244,9 @@ fi
 
 if [ -f ~/.bash_completion ]; then
   . ~/.bash_completion
+fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+if test -n "$(command -v stack)" ; then
+  eval "$(stack --bash-completion-script stack)"
 fi
