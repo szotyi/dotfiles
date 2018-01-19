@@ -76,6 +76,23 @@ command NT NERDTree
 let g:ctrlp_regexp_search = 1
 " let g:ctrlp_clear_cache_on_exit = 0
 
+" ale
+let g:ale_linters = {
+\   'haskell': ['hlint', 'stack-ghc-mod', 'stack-ghc', 'stack-build'],
+\}
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+"let g:ale_open_list = 1
+
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" airline
+let g:airline#extensions#ale#enabled = 1
+
 if !has("gui_running")
 else
 " colors

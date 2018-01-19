@@ -19,3 +19,6 @@
 [submodule "vim.symlink/pack/szotyi/start/ctrlp.vim"]
 	path = vim.symlink/pack/szotyi/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim.symlink/pack/szotyi/start/ale"]
+	path = vim.symlink/pack/szotyi/start/ale
+	url = https://github.com/w0rp/ale.git

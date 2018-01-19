@@ -71,8 +71,8 @@ export CLICOLOR=1
 # don't record duplicates
 export HISTCONTROL=ignoreboth:erasedups
 
-# backward search with ctrl-s
-stty -ixon
+# backward search with ctrl-s (commented because of "stty: 'standard input': Inappropriate ioctl for device"
+# stty -ixon
 
 # ----------------------------------------------------------------------
 # PATH
@@ -81,14 +81,15 @@ stty -ixon
 # we want the various sbins on the path along with /usr/local/bin
 PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
 
+
+test -d "$HOME/.local/bin" && PATH="$HOME/.local/bin:$PATH"
 # put ~/bin on PATH if you have it
-test -d "$HOME/bin" &&
-PATH="$HOME/bin:$PATH"
+test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 
 # Haskell for Mac
-if [ -d /usr/local/lib/HaskellCLI-8.0.2-8.9-3/bin ]; then
-  PATH="$PATH:/usr/local/lib/HaskellCLI-8.0.2-8.9-3/bin"
-fi
+#if [ -d /usr/local/lib/HaskellCLI-8.0.2-8.9-3/bin ]; then
+#  PATH="$PATH:/usr/local/lib/HaskellCLI-8.0.2-8.9-3/bin"
+#fi
 
 export PATH
 
@@ -110,6 +111,7 @@ pwdf ()
 }
 
 alias cdf='cd "`pwdf`"'
+
 
 # ----------------------------------------------------------------------
 # PAGER / EDITOR
@@ -250,3 +252,4 @@ fi
 if test -n "$(command -v stack)" ; then
   eval "$(stack --bash-completion-script stack)"
 fi
+
