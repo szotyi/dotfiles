@@ -45,7 +45,9 @@ BASH_ENV=$HOME/.bashrc
 CVS_RSH=ssh
 EDITOR=vim
 SVN_EDITOR="vim --noplugin"
-LC_CTYPE=hu_HU.UTF-8
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+LC_CTYPE=en_US.UTF-8
 if [ "$(uname -s)" == "Darwin" ]
 then
   #export JAVA_HOME=$(/usr/libexec/java_home)
@@ -55,7 +57,7 @@ then
   use-java 8
 fi
 
-export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LC_CTYPE
+export CVS_RSH BASH_ENV EDITOR SVN_EDITOR LANG LC_ALL LC_CTYPE
 
 # Tell ls to be colourful
 export CLICOLOR=1
@@ -73,6 +75,8 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # backward search with ctrl-s (commented because of "stty: 'standard input': Inappropriate ioctl for device"
 # stty -ixon
+# from https://stackoverflow.com/a/25391867
+[[ $- == *i* ]] && stty -ixon
 
 # ----------------------------------------------------------------------
 # PATH
@@ -93,24 +97,40 @@ test -d "$HOME/bin" && PATH="$HOME/bin:$PATH"
 
 export PATH
 
-# pwdf: echoes path of front-most window of Finder
-pwdf ()
-{ 
-   currFolderPath=$( /usr/bin/osascript <<"   EOT"
-       tell application "Finder"
-           try
-               set currFolder to (folder of the front window as alias)
-           on error
-               set currFolder to (path to desktop folder as alias)
-           end try
-           POSIX path of currFolder
-       end tell
-   EOT
-   )
-   echo "$currFolderPath"
+# ----------------------------------------------------------------------
+# CD
+# ----------------------------------------------------------------------
+CDPATH=.:~:~/Development/projects/4dmotion/iOS:~/Development/projects:
+
+function cd() {
+  if [ "$#" = "0" ]
+  then
+  pushd ${HOME} > /dev/null
+  elif [ -f "${1}" ]
+  then
+    ${EDITOR} ${1}
+  else
+  pushd "$1" > /dev/null
+  fi
 }
 
-alias cdf='cd "`pwdf`"'
+function bd(){
+  if [ "$#" = "0" ]
+  then
+    popd > /dev/null
+  else
+    for i in $(seq ${1})
+    do
+      popd > /dev/null
+    done
+  fi
+}
+
+if [[ $- == *i* ]]
+then
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+fi
 
 
 # ----------------------------------------------------------------------
