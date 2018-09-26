@@ -273,3 +273,8 @@ if test -n "$(command -v stack)" ; then
   eval "$(stack --bash-completion-script stack)"
 fi
 
+# Source Swift completion
+if [ -n "`which swift`" ]; then
+  eval "`swift package completion-tool generate-bash-script`"
+fi
+

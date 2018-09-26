@@ -25,6 +25,8 @@ fi
 alias datetime='date "+%Y%m%d%H%M%S"'
 
 alias pubkey="more ~/.ssh/id_dsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias justssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+
 alias json="python -mjson.tool"
 
 if [ "$(uname -s)" == "Darwin" ]
