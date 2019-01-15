@@ -29,6 +29,9 @@ alias justssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 alias json="python -mjson.tool"
 
+alias flane="bundle exec fastlane"
+alias cpods="bundle exec pod"
+
 if [ "$(uname -s)" == "Darwin" ]
 then
   alias trash_lsof="sudo lsof +c 0 | grep '\.Trash'"
