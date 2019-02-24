@@ -53,6 +53,13 @@ if has("autocmd")
       \   exe "normal g`\"" |
       \ endif
 
+  au BufReadPost Fastfile set filetype=ruby
+  au BufReadPost Matchfile set filetype=ruby
+  au BufReadPost Deliverfile set filetype=ruby
+  au BufReadPost Gymfile set filetype=ruby
+  au BufReadPost Pluginfile set filetype=ruby
+  au BufReadPost Appfile set filetype=ruby
+  au BufReadPost Podfile set filetype=ruby
 
 endif " has("autocmd")
 
